@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show and Hide Image</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+    <div class="container">
+        <!-- Clickable Text -->
+        <a href="#" id="showImage" class="clickable-text">Show Image</a>
+
+        <!-- Image Section (Hidden by Default) -->
+        <div id="imageContainer" class="hidden">
+            <img src="clinic.webp" alt="Displayed Image">
+            <button id="hideImage" class="hide-button">Hide Image</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to Handle Show and Hide Image
+        const showImageLink = document.getElementById("showImage");
+        const imageContainer = document.getElementById("imageContainer");
+        const hideImageButton = document.getElementById("hideImage");
+
+        // Show Image on Click
+        showImageLink.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default link behavior
+            imageContainer.classList.remove("hidden");
+        });
+
+        // Hide Image on Click
+        hideImageButton.addEventListener("click", function () {
+            imageContainer.classList.add("hidden");
+        });
+    </script>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    text-align: center;
+}
+
+
+.clickable-text{
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.clickable-text:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+#imageContainer img {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hide-button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hide-button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</body>
+</html>
